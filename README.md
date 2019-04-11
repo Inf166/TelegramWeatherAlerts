@@ -6,7 +6,12 @@
 * 04/04/2019 Workshop
   * Wissendefizite festgestellt
   * Lernportfolios: [Hier klicken.](https://github.com/Inf166/CooleKerleClub/tree/master/Lernportfolios)
-
+  * Problemszenario "Koordination von Reisegruppen" gewählt
+  * Problem: **Eventkoordination und Informationseinholung**
+  * Strategisches Ziel: **Zuverlässige Kommunikation zwischen Aktor und Service(Verteilte Dienste)**
+  * Taktische Ziele:
+    * **Fokus auf weitgehende asynchrone Kommunikation**
+    * **Service mit Einbindung von API's und Auslagerung**
 * 11/04/2019 Workshop
   * Domainmodell: 
 * 25/04/2019 Meilenstein 1
