@@ -71,6 +71,7 @@ const telegramBot = new telegram({
     }
 });
 const authcode = 'webdev';
+const city = 'gummersbach';
 var chats = [];
 
 telegramBot.getMe().then(function(data) {
@@ -102,6 +103,7 @@ function sendTelegramMessageAll(msg) {
 telegramBot.on('message', function(message) {
     if (message.text == '/start') {
         sendTelegramMessage('Hello. Please use _/login <password>_ to subscribe to a service.', message.chat.id);
+        // sendTelegramMessage('Hello. Please use _/weather to recieve the current temperature.', message.chat.id);
     }
 
     if (message.text == `/login ${authcode}`) {
@@ -112,5 +114,10 @@ telegramBot.on('message', function(message) {
             console.log(' [*] A new Telegram-User has subscribed to the Service.');
             sendRMQMessage('server-module', 'A new Telegram-User has subscribed to the Service.');
         }
+    }
+
+    if (message.text == `/weather`) {
+        console.log(' [*] A Telegram-User has requested a weather-update.');
+        sendRMQMessage('server-module', 'A Telegram-User has requested a weather-update.');               
     }
 });

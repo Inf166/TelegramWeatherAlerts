@@ -37,6 +37,12 @@ amqp.connect('amqp://localhost', function(err, conn) {
                     console.log(' [*] Temperature has changed! Informing Telegram Users.');
                     sendRMQMessage('telegram-module', `The temperature at the venue has changed to _${msg.content.toString()} °C_.`);
                 }
+                // React to Telegram Wheather Update Service
+                if (msg.fields.routingKey == 'telegram') {
+                    console.log(' [*] Informing Telegram Users about Temperature.');
+                    //REQUEST WEATHER
+                    sendRMQMessage('telegram-module', `The temperature at the venue has changed to _${msg.content.toString()} °C_.`);
+                }
             }, {
                 noAck: true
             });
