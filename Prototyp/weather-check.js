@@ -2,9 +2,9 @@
 const amqp = require('amqplib/callback_api');
 
 // Globals
-const listener = 'weather-module';
-const listener_topics = ['server'];
-const topic = 'weather';
+const listener = 'weather-check';
+const listener_topics = ['telegram'];
+const topic = 'weather-check';
 
 // Weather Channel Listener
 amqp.connect('amqp://localhost', function(err, conn) {
@@ -73,13 +73,12 @@ function checkWeather(city) {
 
         if (currentTemp != temp) {
             currentTemp = temp;
-            sendRMQMessage('server-module', currentTemp.toString());
+            sendRMQMessage('telegram-module', currentTemp.toString());
         }
 
         setTimeout(function() {
-            checkWeather(city);
-        }, 1000 * 60);
+            process.exit(0)
+        }, 60);
     });
 }
 checkWeather(city);
-console.log(' [*] Weather Service Running...');

@@ -1,6 +1,5 @@
 // RabbitMQ
 const amqp = require('amqplib/callback_api');
-
 // Globals
 const listener = 'server-module';
 const listener_topics = ['weather', 'telegram'];
