@@ -26,6 +26,7 @@
     * [ ]Datenspeicherung
 * 25/04/2019 Meilenstein 1
   * Erweitern des Clients
+  * Servicemodell: [Hier klicken.](https://github.com/Inf166/WD_SS19_Frameworks/blob/master/Workshopmaterial/ServiceModell/ServiceModell.png)
   * **Ziele** die Erreicht wurden
     * [x]Domainmodell
     * [x]Serviceaufbau
