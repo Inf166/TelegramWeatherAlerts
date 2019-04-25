@@ -18,11 +18,24 @@
   * **Ziele** für den 25/04/2019
     * [x]Domainmodell
     * [x]Serviceaufbau
-    * [ ]Client kann senden und empfangen
+    * [ ]Client kann empfangen von Daten
+    * [ ]Client kann senden 
     * [ ]Loginmöglichkeit
     * [ ]Chatmöglichkeit
     * [ ]Gruppenerstellung
     * [ ]Datenspeicherung
 * 25/04/2019 Meilenstein 1
+  * Erweitern des Clients
+  * Servicemodell: [Hier klicken.](https://github.com/Inf166/WD_SS19_Frameworks/blob/master/Workshopmaterial/ServiceModell/ServiceModell.png)
+  * **Ziele** die Erreicht wurden
+    * [x]Domainmodell
+    * [x]Serviceaufbau
+    * [x]Client kann empfangen von Daten
+    * [x]Client kann senden 
+    * [x]Loginmöglichkeit
+    * [ ]Chatmöglichkeit
+    * [ ]Gruppenerstellung
+    * [ ]Datenspeicherung
+
 * 02/05/2019 Workshop
 * 09/05/2019 Meilenstein 2

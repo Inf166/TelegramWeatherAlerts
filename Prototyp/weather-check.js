@@ -82,3 +82,4 @@ function checkWeather(city) {
     });
 }
 checkWeather(city);
+
