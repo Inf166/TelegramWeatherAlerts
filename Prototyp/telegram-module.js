@@ -3,7 +3,7 @@ const amqp = require('amqplib/callback_api');
 
 // Globals
 const listener = 'telegram-module';
-const listener_topics = ['server'];
+const listener_topics = ['server', 'weather-check'];
 const topic = 'telegram';
 
 // Telegram Channel Listener
@@ -34,6 +34,10 @@ amqp.connect('amqp://localhost', function(err, conn) {
                 if (msg.fields.routingKey == 'server') {
                     console.log(' [*] Got a new Server Response! Sending to Clients.');
                     sendTelegramMessageAll(msg.content.toString());
+                }
+                if (msg.fields.routingKey == 'weather-check') {
+                    console.log(' [*] Got a new Weathercheck Response! Sending to Clients.');
+                    sendTelegramMessageAll(`The temperature at the venue is currently _${msg.content.toString()} °C_.`);
                 }
             }, {
                 noAck: true
@@ -115,9 +119,13 @@ telegramBot.on('message', function(message) {
             sendRMQMessage('server-module', 'A new Telegram-User has subscribed to the Service.');
         }
     }
-
+    //Checkweather
     if (message.text == `/weather`) {
-        console.log(' [*] A Telegram-User has requested a weather-update.');
-        sendRMQMessage('server-module', 'A Telegram-User has requested a weather-update.');               
+        if (chats.includes(message.chat.id)) {
+            chats.push(message.chat.id);
+            console.log(' [*] A Telegram-User has requested a weather-update.');
+            var child = require('child_process').fork('weather-check.js');
+            child.on(close);  
+        }
     }
 });
