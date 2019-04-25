@@ -31,7 +31,7 @@
     * [x]Serviceaufbau
     * [x]Client kann empfangen von Daten
     * [x]Client kann senden 
-    * [X]Loginmöglichkeit
+    * [x]Loginmöglichkeit
     * [ ]Chatmöglichkeit
     * [ ]Gruppenerstellung
     * [ ]Datenspeicherung
