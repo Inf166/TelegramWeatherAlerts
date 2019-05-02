@@ -5,7 +5,7 @@
 ## Timetable with results
 * 04/04/2019 Workshop
   * Wissensdefizite festgestellt
-  * Lernportfolios: [Hier klicken.](https://github.com/Inf166/CooleKerleClub/tree/master/Lernportfolios)
+  * Lernportfolios: [Hier klicken.](https://github.com/Inf166/WD_SS19_Frameworks/tree/master/Lernportfolios)
   * Problemszenario "Koordination von Reisegruppen" gewählt
   * Problem: **Eventkoordination und Informationseinholung**
   * Strategisches Ziel: **Zuverlässige Kommunikation zwischen Aktor und Service (Verteilte Dienste)**
@@ -14,7 +14,7 @@
     * **Service mit Einbindung von API's und Auslagerung**
     * **Eventbasiertes verteiltes System auf RabbitMQ, Javascript & Node.js**
 * 11/04/2019 Workshop
-  * Domänenmodell: [Hier klicken.](https://github.com/Inf166/CooleKerleClub/blob/master/Workshopmaterial/Domaindiagramm/)
+  * Domänenmodell: [Hier klicken.](https://github.com/Inf166/WD_SS19_Frameworks/blob/master/Workshopmaterial/Domaindiagramm/)
   * Erreichte **Ziele**
     * [x] Domänenmodell
     * [x] Serviceaufbau
