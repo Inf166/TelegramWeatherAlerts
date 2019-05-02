@@ -4,38 +4,35 @@
 
 ## Timetable with results
 * 04/04/2019 Workshop
-  * Wissendefizite festgestellt
+  * Wissensdefizite festgestellt
   * Lernportfolios: [Hier klicken.](https://github.com/Inf166/CooleKerleClub/tree/master/Lernportfolios)
   * Problemszenario "Koordination von Reisegruppen" gewählt
   * Problem: **Eventkoordination und Informationseinholung**
-  * Strategisches Ziel: **Zuverlässige Kommunikation zwischen Aktor und Service(Verteilte Dienste)**
+  * Strategisches Ziel: **Zuverlässige Kommunikation zwischen Aktor und Service (Verteilte Dienste)**
   * Taktische Ziele:
-    * **Fokus auf weitgehende asynchrone Kommunikation**
+    * **Fokus auf weitgehend asynchrone Kommunikation**
     * **Service mit Einbindung von API's und Auslagerung**
     * **Eventbasiertes verteiltes System auf RabbitMQ, Javascript & Node.js**
 * 11/04/2019 Workshop
-  * Domainmodell: [Hier klicken.](https://github.com/Inf166/CooleKerleClub/blob/master/Workshopmaterial/Domaindiagramm/)
-  * **Ziele** für den 25/04/2019
-    * [x]Domainmodell
-    * [x]Serviceaufbau
-    * [ ]Client kann empfangen von Daten
-    * [ ]Client kann senden 
-    * [ ]Loginmöglichkeit
-    * [ ]Chatmöglichkeit
-    * [ ]Gruppenerstellung
-    * [ ]Datenspeicherung
+  * Domänenmodell: [Hier klicken.](https://github.com/Inf166/CooleKerleClub/blob/master/Workshopmaterial/Domaindiagramm/)
+  * Erreichte **Ziele**
+    * [x] Domänenmodell
+    * [x] Serviceaufbau
+    * [ ] Client kann Daten senden/empfangen
+    * [ ] Loginmöglichkeit
+    * [ ] Chatmöglichkeit
+    * [ ] Gruppenerstellung
+    * [ ] Datenspeicherung
 * 25/04/2019 Meilenstein 1
   * Erweitern des Clients
-  * Servicemodell: [Hier klicken.](https://github.com/Inf166/WD_SS19_Frameworks/blob/master/Workshopmaterial/ServiceModell/ServiceModell.png)
-  * **Ziele** die Erreicht wurden
-    * [x]Domainmodell
-    * [x]Serviceaufbau
-    * [x]Client kann empfangen von Daten
-    * [x]Client kann senden 
-    * [x]Loginmöglichkeit
-    * [ ]Chatmöglichkeit
-    * [ ]Gruppenerstellung
-    * [ ]Datenspeicherung
-
+  * Architekturmodell: [Hier klicken.](https://github.com/Inf166/WD_SS19_Frameworks/blob/master/Workshopmaterial/Architekturmodell/Architekturmodell v1.png)
+  * Erreichte **Ziele**
+    * [x] Domänenmodell
+    * [x] Serviceaufbau
+    * [x] Client kann Daten senden/empfangen
+    * [x] Loginmöglichkeit
+    * [ ] Chatmöglichkeit
+    * [ ] Gruppenerstellung
+    * [ ] Datenspeicherung
 * 02/05/2019 Workshop
 * 09/05/2019 Meilenstein 2
