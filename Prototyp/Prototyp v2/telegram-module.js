@@ -171,15 +171,37 @@ function sendTelegramMessageByEvent(event, author, text) {
     }
 }
 
+function sendTelegramByEventID(event, text, userid, author) {
+    let users = [];
+    for (let i = 0; i < userData.length; i++) {
+        if (userData[i].events.includes(event) && userData[i].id != userid)
+            users.push(userData[i].id);
+    }
+
+    for (let j = 0; j < users.length; j++) {
+        sendTelegramMessage(`${author}: ${text}`, users[j]);
+    }
+}
+
 telegramBot.on('message', function(message) {
     // Chat Message
     if (message.text.startsWith('+')) {
-        if (!chats.includes(message.chat.id)) {
+        if (chats.includes(message.chat.id)) {
             let args = message.text.slice(1).trim().split(/ +/g);
             let event = args.shift().toLowerCase();
-            let author = message.chat.username;
-            let text = args.join(' ');
-            sendRMQMessage('broker-module', `chat:${event}:${author}:${text}`);
+
+            for (let i = 0; i < userData.length; i++) {
+                if (userData[i].id == message.chat.id) {
+                    if (userData[i].events.includes(event)) {
+                        let author = message.chat.username;
+                        let text = args.join(' ');
+                        sendRMQMessage('broker-module', `chat:${event}:${author}:${text}`);
+                        sendTelegramByEventID(event, text, message.chat.id, author);
+                    } else {
+                        sendTelegramMessage('Du bist kein Mitglied dieser Veranstaltung.', message.chat.id);
+                    }
+                }
+            }
         } else {
             sendTelegramMessage('Du musst dich anmelden, um diese Funktion nutzen zu können.', message.chat.id);
         }
@@ -199,10 +221,14 @@ telegramBot.on('message', function(message) {
                     exists = true;
             }
 
+            let username = 'No Username';
+            if (message.chat.username)
+                username = message.chat.username;
+
             if (!exists) {
                 let user = {
                     id: message.chat.id,
-                    name: message.chat.username,
+                    name: username,
                     events: []
                 };
                 userData.push(user);
@@ -239,7 +265,9 @@ telegramBot.on('message', function(message) {
                                 sendTelegramMessage(`Du bist der Veranstaltung _${eventname}_ bereits beigetreten.`, message.chat.id);
                             } else {
                                 userData[i].events.push(eventname);
+                                updateUserFile();
                                 sendTelegramMessage(`Du bist der Veranstaltung _${eventname}_ erfolgreich beigetreten.`, message.chat.id);
+                                console.log('[*] Ein Telegram-Nutzer ist einer Veranstaltung beigetreten.');
                             }
                         }
                     }

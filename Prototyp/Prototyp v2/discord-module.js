@@ -136,7 +136,7 @@ discordClient.on('message', msg => {
 
     // Normal Message
     if (msg.content.indexOf('/') !== 0) {
-        if (type ==  'dm') { // DM
+        if (type == 'dm') { // DM
 
         } else if (type == 'text') { // Channel Message
             // Check if channel 'allgemein'
@@ -146,10 +146,17 @@ discordClient.on('message', msg => {
                         let args = msg.content.slice(1).trim().split(/ +/g);
                         let event = args.shift().toLowerCase();
                         
-                        // Interpretiere als Chat
-                        let text = args.join(' ');
-                        let author = msg.author.username;
-                        sendRMQMessage('broker-module', `chat:${event}:${author}:${text}`);
+                        for (let i = 0; i < userData.length; i++) {
+                            if (userData[i].id == msg.author.id) {
+                                if (userData[i].events.includes(event)) {
+                                    let author = msg.author.username;
+                                    let text = args.join(' ');
+                                    sendRMQMessage('broker-module', `chat:${event}:${author}:${text}`);
+                                } else {
+                                    msg.reply('Du bist kein Mitglied dieser Veranstaltung.');
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -208,7 +215,9 @@ discordClient.on('message', msg => {
                                     msg.reply(`Du bist der Veranstaltung _${eventname}_ bereits beigetreten.`);
                                 } else {
                                     userData[i].events.push(eventname);
+                                    updateUserFile();
                                     msg.reply(`Du bist der Veranstaltung _${eventname}_ erfolgreich beigetreten.`);
+                                    console.log('[*] Ein Discord-Nutzer ist einer Veranstaltung beigetreten.');
                                 }
                             }
                         }
@@ -239,7 +248,9 @@ discordClient.on('message', msg => {
                                     msg.reply(`Du bist der Veranstaltung _${eventname}_ bereits beigetreten.`);
                                 } else {
                                     userData[i].events.push(eventname);
+                                    updateUserFile();
                                     msg.reply(`Du bist der Veranstaltung _${eventname}_ erfolgreich beigetreten.`);
+                                    console.log('[*] Ein Discord-Nutzer ist einer Veranstaltung beigetreten.');
                                 }
                             }
                         }
