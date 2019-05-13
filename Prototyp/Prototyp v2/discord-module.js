@@ -120,11 +120,11 @@ function sendRMQMessage(listener, msg) {
 // Discord BOT API
 const discord = require('discord.js');
 const discordClient = new discord.Client();
-const discordToken = 'NTc1NjQyMDczMjU2OTUxODQ4.XNK7BA.JmGF4h24TOGc_s0R4vR2Js0xzMs';
+const discordToken = 'REMOVED';
 const authcode = 'webdev';
 
-const defaultchannel = '575643619487121419';
-const weatherchannel = '575645239407018010';
+const defaultchannel = 'REMOVED';
+const weatherchannel = 'REMOVED';
 
 discordClient.on('ready', () => {
   console.log(`[*] Logged into Discord as ${discordClient.user.tag}.`);

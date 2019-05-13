@@ -65,7 +65,7 @@ function sendRMQMessage(listener, msg) {
 // Telegram Bot
 const telegram = require('telegram-bot-api');
 const telegramBot = new telegram({
-    token: '779256204:AAEN52D3wPIXQsi_I96MAST4dr427bysl0M',
+    token: 'REMOVED',
     updates: {
         enabled: true
     }
